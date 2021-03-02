@@ -1,10 +1,15 @@
 import React from 'react'
-import 'assets/scss/style.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import 'assets/scss/style.scss'
+import LandingPage from 'pages/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hai World!</h1>
+      <Router>
+        <Route path="/" component={LandingPage}></Route>
+      </Router>
     </div>
   );
 }

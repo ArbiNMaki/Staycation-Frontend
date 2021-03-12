@@ -14,7 +14,7 @@ export default function Breadcrumb(props) {
         {props.data.map((item, index) => {
           return (
             <li
-              key={`breadcrumn-${index}`}
+              key={`breadcrumb-${index}`}
               className={`breadcrumb-item${
                 index === props.data.length - 1 ? " active" : ""
               }`}

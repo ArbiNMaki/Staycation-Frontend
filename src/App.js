@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
 
 import 'assets/scss/style.scss'
 
@@ -17,6 +18,8 @@ function App() {
         <Route exact path="/checkout" component={Checkout}></Route>
         <Route path="/example" component={Example}></Route>
       </Router>
+
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

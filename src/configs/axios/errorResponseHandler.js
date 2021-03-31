@@ -1,19 +1,20 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function errorResponseHandler(error) {
-    if(error) {
-        let message
-        if(error.response) {
-            if(error.responsestatus === 500) message = "Something went wrong"
-            else message = error.response.message
+  if (error) {
+    let message;
+    if (error.response) {
+      if (error.response.status === 500) message = "Something went wrong";
+      else message = error.response.data.message;
 
-            console.log(message)
-            toast(message)
+      console.log(message);
 
-            return Promise.reject(error)
-        }
+      toast(message);
+
+      return Promise.reject(error);
     }
-} 
+  }
+}
 
-export default errorResponseHandler
+export default errorResponseHandler;
